@@ -102,8 +102,8 @@ body {
   align-items: baseline;
 }
 .nav-menu {
-  margin-right: 331px;
   margin-left: 93px;
+  margin-right: 275px;
 }
 .site-nav {
   display: flex;
@@ -121,23 +121,49 @@ body {
   padding: 0;
 }
 
-.mail {
+.contacts-link {
   color: var(--primary-text-color);
 }
-.tel {
+.contacts-link {
   color: var(--primary-text-color);
 }
-.mail:focus,
-.mail:hover,
-.tel:focus,
-.tel:hover {
+.contacts-link:focus,
+.contacts-link:hover {
   color: var(--accent-color);
 }
+.contacts-link:hover .icon-envelope,
+.contacts-link:focus .icon-envelope,
+.contacts-link:hover .icon-smartphone,
+.contacts-link:focus .icon-smartphone {
+  fill: var(--accent-color);
+}
+
 .address {
   display: flex;
   margin-left: auto;
 }
+.contacts-link {
+  display: flex;
+  align-items: center;
+  padding-top: 7px;
+  padding-bottom: 7px;
 
+  font-weight: 500;
+  line-height: 1.14;
+  letter-spacing: 0.02em;
+}
+.icon-envelope {
+  width: 16px;
+  height: 12px;
+  margin-right: 10px;
+  fill: #afb1b8;
+}
+.icon-smartphone {
+  margin-right: 10px;
+  fill: #afb1b8;
+  width: 10px;
+  height: 16px;
+}
 .address-item:not(:last-child) {
   margin-right: 50px;
 }
@@ -203,6 +229,21 @@ body {
   border-radius: 4px;
   border: none;
 }
+.overley {
+  display: flex;
+  align-items: center;
+  height: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url(../images/hero.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+.hero {
+  display: flex;
+  justify-content: center;
+}
 h1,
 h2,
 h3 {
@@ -239,9 +280,17 @@ h3 {
   background-color: var(--accent-color);
   color: var(--primary-white-color);
 }
+.portfolio-button:focus,
+.portfolio-button:hover {
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
 .projects-list {
   display: flex;
   flex-wrap: wrap;
+}
+.projects-text {
+  padding: 0 24px;
+  margin-top: 20px;
 }
 .project-item {
   display: block;
@@ -249,7 +298,13 @@ h3 {
   margin-right: 30px;
   margin-bottom: 30px;
 
-  border-bottom: 1px solid #eeeeee;
+  border: 1px solid #eeeeee;
+  background: #ffffff;
+  box-sizing: border-box;
+}
+.project-link {
+  display: block;
+  padding-bottom: 20px;
 }
 .project-item:nth-child(3n) {
   margin-right: 0;
@@ -258,7 +313,9 @@ h3 {
 .project-item:nth-last-child(-n + 3) {
   margin-bottom: 0;
 }
-
+.project-item:hover {
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
+}
 .product-name {
   font-weight: 700;
   font-size: 18px;
@@ -280,6 +337,27 @@ h3 {
 .features-item {
   min-width: 270px;
   max-width: 270px;
+}
+.features-list .features-item::before {
+  display: block;
+  content: '';
+  height: 120px;
+  background-color: #f5f4fa;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin-bottom: 30px;
+}
+.antenna::before {
+  background-image: url(../images/icons/antenna.svg);
+}
+.clock::before {
+  background-image: url(../images/icons/clock.svg);
+}
+.diagrama::before {
+  background-image: url(../images/icons/diagram.svg);
+}
+.astronaut::before {
+  background-image: url(../images/icons/astronaut.svg);
 }
 .features-list .features-item:not(:last-child) {
   margin-right: 30px;
@@ -352,6 +430,82 @@ h3 {
   margin-bottom: 30px;
   color: #757575;
 }
+.social-icons {
+  display: inline-flex;
+  margin: 0px 32px 30px 32px;
+}
+.social-icons-item + .social-icons-item {
+  margin-left: 10px;
+}
+.social-icons-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+}
+.social-icons .icon {
+  width: 20px;
+  height: 20px;
+  fill: #afb1b8;
+}
+.social-icons-link:hover,
+.social-icons-link:focus {
+  background-color: var(--accent-color);
+}
+.social-icons-link:hover .icon,
+.social-icons-link:focus .icon {
+  fill: var(--primary-white-color);
+}
+/*Клиенты*/
+.clients {
+  padding-top: 94px;
+  padding-bottom: 94px;
+}
+.clients-title {
+  margin-bottom: 50px;
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 42px;
+  text-align: center;
+  letter-spacing: 0.03em;
+}
+.clients-list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.items {
+  width: 170px;
+  height: 90px;
+  border: 1px solid #afb1b8;
+  box-sizing: border-box;
+  border-radius: 4px;
+}
+.client-section-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 170px;
+  height: 90px;
+  fill: #afb1b8;
+  border: 1px solid #afb1b8;
+  box-sizing: border-box;
+  border-radius: 4px;
+}
+.clients-list .items {
+  margin-right: 30px;
+}
+.client-section-link:hover,
+.client-section-link:focus {
+  fill: var(--accent-color);
+}
+.client-section-link:hover,
+.client-section-link:focus {
+  border: 1px solid var(--accent-color);
+}
+
 /*Подвал*/
 .bottom {
   background-color: #2f303a;
@@ -359,6 +513,10 @@ h3 {
   height: 252px;
   padding: 60px 0 60px 0;
 }
+.bottom {
+  display: flex;
+}
+
 .second-logo-footer {
   font-family: Raleway;
   font-style: normal;
@@ -374,15 +532,67 @@ h3 {
 }
 .street {
   font-style: normal;
+  padding-bottom: 9px;
 }
 
 .mail-footer,
 .tel-footer {
   color: var(--primary-text-color);
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.7;
+  letter-spacing: 0.03em;
+  margin-bottom: 9px;
 }
 .mail-footer:focus,
 .mail-footer:hover,
 .tel-footer:hover,
 .tel-footer:focus {
   color: var(--accent-color);
+}
+
+.social-title {
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 1.14;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  color: #ffffff;
+}
+
+.contact {
+  display: inline-block;
+  flex-basis: calc((50% - 45px) / 2);
+  margin-left: 70px;
+}
+.social-list {
+  display: flex;
+  padding-bottom: 30px;
+}
+.social-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 44px;
+  height: 44px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+}
+.social-link:hover {
+  background-color: var(--accent-color);
+}
+.social-icon {
+  width: 20px;
+  height: 20px;
+  fill: #ffffff;
+}
+footer .container {
+  display: inline-flex;
+}
+.footer-contact {
+  margin-bottom: 9px;
+}
+.social-item:not(:last-child) {
+  margin-right: 10px;
 }
